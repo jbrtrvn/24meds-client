@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const Checkout = ({ show, onHide, totalSubtotal, onCheckout }) => {
   const handleCheckout = () => {
-    fetch("http://localhost:4000/order/checkout", {
+    fetch(`${import.meta.env.VITE_API_URL}/order/checkout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -6,7 +6,7 @@ const ViewOrders = () => {
 
   useEffect(() => {
     // Fetch all orders
-    fetch("http://localhost:4000/order/all-orders", {
+    fetch(`${import.meta.env.VITE_API_URL}/order/all-orders`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
@@ -23,7 +23,7 @@ const ViewOrders = () => {
   }, []);
 
   const handleProcessOrder = (orderId) => {
-    fetch(`http://localhost:4000/order/process/${orderId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/order/process/${orderId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

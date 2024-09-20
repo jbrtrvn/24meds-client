@@ -20,7 +20,7 @@ const CreateMedicine = () => {
 
   // Fetch available categories from the backend
   useEffect(() => {
-    fetch('http://localhost:4000/categories')
+    fetch(`${import.meta.env.VITE_API_URL}/categories`)
       .then(response => response.json())
       .then(data => {
         setCategories(data.data); 
@@ -44,7 +44,7 @@ const CreateMedicine = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:4000/medicines/create', {
+    fetch(`${import.meta.env.VITE_API_URL}/medicines/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

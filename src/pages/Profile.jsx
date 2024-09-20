@@ -31,7 +31,7 @@ const ProfilePage = () => {
 
     const fetchUserProfile = async () => {
       try {
-        const response = await fetch('http://localhost:4000/users/details', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/users/details`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const ProfilePage = () => {
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/users/update-profile', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/users/update-profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ const ProfilePage = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:4000/users/change-password', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/users/change-password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

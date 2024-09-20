@@ -11,7 +11,7 @@ const UserOrder = () => {
 
   useEffect(() => {
     // Fetch the current user's orders
-    fetch("http://localhost:4000/order/my-orders", {
+    fetch(`${import.meta.env.VITE_API_URL}/order/my-orders`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
@@ -24,7 +24,7 @@ const UserOrder = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4000/medicines", {
+    fetch(`${import.meta.env.VITE_API_URL}/medicines`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },

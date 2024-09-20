@@ -18,7 +18,7 @@ const BuyMedicine = () => {
 
   // Fetch categories on component mount
   useEffect(() => {
-    fetch("http://localhost:4000/categories")
+    fetch(`${import.meta.env.VITE_API_URL}/categories`)
       .then((response) => response.json())
       .then((data) => {
         setCategories(data.data);
@@ -32,7 +32,7 @@ const BuyMedicine = () => {
 
   const fetchMedicinesByCategory = (categoryId) => {
     setLoading(true);
-    fetch(`http://localhost:4000/categories/${categoryId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/categories/${categoryId}`)
       .then((response) => response.json())
       .then((data) => {
         const filteredMedicines = data.data.filter(medicine => medicine.isActive || user?.isAdmin);
@@ -66,7 +66,7 @@ const BuyMedicine = () => {
       quantity,
     };
 
-    fetch("http://localhost:4000/cart/add-to-cart", {
+    fetch(`${import.meta.env.VITE_API_URL}/cart/add-to-cart`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

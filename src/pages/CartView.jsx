@@ -19,7 +19,7 @@ const CartView = () => {
   }, [cart]);
 
   const fetchCart = () => {
-    fetch("http://localhost:4000/cart/get-cart", {
+    fetch(`${import.meta.env.VITE_API_URL}/cart/get-cart`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -47,7 +47,7 @@ const CartView = () => {
   };
 
   const handleClearCart = () => {
-    fetch("http://localhost:4000/cart/clear-cart", {
+    fetch(`${import.meta.env.VITE_API_URL}/cart/clear-cart`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ const CartView = () => {
   };
 
   const handleRemoveItem = (productId) => {
-    fetch(`http://localhost:4000/cart/${productId}/remove-from-cart`, {
+    fetch(`${import.meta.env.VITE_API_URL}/cart/${productId}/remove-from-cart`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -111,7 +111,7 @@ const CartView = () => {
 
   const handleUpdateQuantity = (productId, quantity) => {
     if (quantity < 1) return;
-    fetch("http://localhost:4000/cart/update-cart-quantity", {
+    fetch(`${import.meta.env.VITE_API_URL}/cart/update-cart-quantity`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

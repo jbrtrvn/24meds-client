@@ -9,7 +9,7 @@ const AddCategory = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch('http://localhost:4000/categories/create', {
+    fetch(`${import.meta.env.VITE_API_URL}/categories/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

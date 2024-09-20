@@ -15,7 +15,7 @@ const UpdateMedicine = () => {
 
   // Fetch medicine details on component mount
   useEffect(() => {
-    fetch(`http://localhost:4000/medicines/${medicineId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/medicines/${medicineId}`)
       .then(response => response.json())
       .then(data => {
         setMedicine(data.data);
@@ -39,7 +39,7 @@ const UpdateMedicine = () => {
     e.preventDefault();
     setLoading(true);
   
-    fetch(`http://localhost:4000/medicines/update/${medicineId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/medicines/update/${medicineId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

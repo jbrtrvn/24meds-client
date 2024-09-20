@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   }, []);
 
   const fetchMedicines = () => {
-    fetch("http://localhost:4000/medicines", {
+    fetch(`${import.meta.env.VITE_API_URL}/medicines`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
@@ -29,7 +29,7 @@ const AdminDashboard = () => {
   };
 
   const handleArchive = (medicineId) => {
-    fetch(`http://localhost:4000/medicines/archive/${medicineId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/medicines/archive/${medicineId}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
   };
 
   const handleActivate = (medicineId) => {
-    fetch(`http://localhost:4000/medicines/activate/${medicineId}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/medicines/activate/${medicineId}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,

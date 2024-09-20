@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:4000/users/register', {
+    fetch(`${import.meta.env.VITE_API_URL}/users/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName, lastName, email, mobileNo, password }),
