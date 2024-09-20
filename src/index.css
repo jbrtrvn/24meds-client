@@ -1,0 +1,153 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure html and body take up full height */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling due to overflow */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Container to fill remaining space */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: #192e57;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url('/images/4.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  color: #fff;
+  width: 100%;
+}
+
+/* Hero Text styling */
+.hero-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #007bff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.hero-image img {
+  max-width: 25%;
+  border-radius: 8px;
+}
+
+/* Services Section */
+.services-section {
+  width: 100%;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.services-section .col-md-4 {
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-section .col-md-4:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.services-section .col-md-4 img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.services-section .col-md-4:hover img {
+  transform: scale(1.1); 
+  filter: brightness(1.1); 
+}
+
+
+/* Container for main content */
+.content {
+  flex: 1; /* Takes up remaining space */
+}
+
+/* Homepage container */
+.homepage-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.quantity-controls button {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.quantity-controls span {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
